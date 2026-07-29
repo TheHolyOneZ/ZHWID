@@ -1,0 +1,47 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Z-HWID",
+  "version": "0.1.0",
+  "identifier": "io.github.theholyonez.zhwid",
+  "build": {
+    "beforeDevCommand": "pnpm dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "pnpm build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Z-HWID",
+        "width": 1120,
+        "height": 760,
+        "minWidth": 960,
+        "minHeight": 640,
+        "resizable": true,
+        "decorations": false,
+        "center": true,
+        "theme": "Dark"
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["deb", "appimage"],
+    "category": "Utility",
+    "publisher": "TheHolyOneZ",
+    "license": "GPL-3.0",
+    "licenseFile": "../LICENSE",
+    "shortDescription": "Linux hardware & network identity switch",
+    "longDescription": "Z-HWID spoofs your MAC address, machine-id, hostname and DHCP identity system-wide with one toggle, hands a fake hardware fingerprint to individual apps via an LD_PRELOAD cloak, and restores your real identity at any time. A privacy and authorized security-testing utility.",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
+  }
+}

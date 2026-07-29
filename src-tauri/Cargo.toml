@@ -1,0 +1,37 @@
+[package]
+name = "z-hwid"
+version = "0.1.0"
+description = "Z-HWID — Linux hardware & network identity switch"
+authors = ["TheHolyOneZ"]
+edition = "2021"
+license = "GPL-3.0"
+default-run = "z-hwid"
+
+[lib]
+name = "z_hwid_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+# GUI (Tauri) binary
+[[bin]]
+name = "z-hwid"
+path = "src/main.rs"
+
+# Command-line interface
+[[bin]]
+name = "zhwid"
+path = "src/cli_main.rs"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+cc = "1"
+
+[dependencies]
+tauri = { version = "2", features = ["tray-icon"] }
+tauri-plugin-opener = "2"
+tauri-plugin-global-shortcut = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+rand = "0.8"
+dirs = "5"
+clap = { version = "4", features = ["derive"] }
+libc = "0.2"
